@@ -1,4 +1,4 @@
-package designpatterns.singletonpatternexample;
+
 
 public class Logger {
 
