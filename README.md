@@ -18,7 +18,7 @@ Cognizant DeepSkilling/
 │       ├── Code/
 │       │   └── FinancialForecasting.java
 │       └── Output/
-│           └── ...
+│           └── 2_Exercise_7_Financial_Forecasting_Output.png
 ├── Week_1_Design_Patterns_and_Principles/
 │   ├── 1_Exercise_1_Singleton_Pattern_Example/
 │   │   ├── Code/
