@@ -1,15 +1,19 @@
 
-
 public class Product {
+    
+    // Attributes for Product class
     private int productId;
     private String productName;
     private String category;
+
+    //Constructor for Product class
     public Product(int id, String name, String category){
         this.productId = id;
         this.productName = name;
         this.category = category;
     }
 
+    // Getters and Setters for Product class
     public int getProductId() {
         return productId;
     }
@@ -28,5 +32,4 @@ public class Product {
     public void setCategory(String category) {
         this.category = category;
     }
-
 }

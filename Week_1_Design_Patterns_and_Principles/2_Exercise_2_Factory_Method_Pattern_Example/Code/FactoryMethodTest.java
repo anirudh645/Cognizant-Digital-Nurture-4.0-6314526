@@ -1,7 +1,7 @@
-package designpatterns.factorymethod_pattern_example;
 
 public class FactoryMethodTest {
     public static void main(String args[]){
+        
         DocumentFactory wordFactory = new WordDocumentFactory();
         Document wordDoc = wordFactory.createDocument();
         wordDoc.open();

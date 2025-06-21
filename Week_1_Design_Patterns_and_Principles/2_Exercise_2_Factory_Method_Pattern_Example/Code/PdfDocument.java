@@ -1,4 +1,3 @@
-package designpatterns.factorymethod_pattern_example;
 
 public class PdfDocument implements Document {
     @Override

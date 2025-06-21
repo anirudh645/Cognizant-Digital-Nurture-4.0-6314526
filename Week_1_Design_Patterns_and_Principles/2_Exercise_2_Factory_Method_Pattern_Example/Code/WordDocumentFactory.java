@@ -1,4 +1,3 @@
-package designpatterns.factorymethod_pattern_example;
 
 public class WordDocumentFactory extends DocumentFactory{
     @Override
