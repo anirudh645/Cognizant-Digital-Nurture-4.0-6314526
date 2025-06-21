@@ -38,6 +38,7 @@ Cognizant DeepSkilling/
 │       │   ├── WordDocument.java
 │       │   ├── WordDocumentFactory.java
 │       └── Output/
+│           └── FactoryMethod_Pattern_Example_output.png
 ```
 
 ## How to Run
