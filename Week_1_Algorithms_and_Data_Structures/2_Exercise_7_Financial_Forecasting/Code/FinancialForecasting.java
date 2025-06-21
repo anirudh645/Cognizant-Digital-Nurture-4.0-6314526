@@ -15,8 +15,8 @@ public class FinancialForecasting {
         // Input from user
         System.out.print("Enter initial investment amount: ");
         double initialInvestment = scanner.nextDouble();
-        System.out.print("Enter annual growth rate (as a decimal): ");
-        double rate = scanner.nextDouble(); 
+        System.out.print("Enter annual growth rate (as a percentage): ");
+        double rate = scanner.nextDouble()/100; // Convert percentage to decimal
         System.out.print("Enter number of periods (years): ");
         int nPeriods = scanner.nextInt();
 

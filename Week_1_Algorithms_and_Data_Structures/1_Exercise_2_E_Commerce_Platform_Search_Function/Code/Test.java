@@ -14,7 +14,6 @@ public class Test {
             }
         }
         System.out.println("Product not found");
-        System.exit(0);// Exit if product not found
     }
 
     // Binary Search: Assumes products array is sorted by productName
