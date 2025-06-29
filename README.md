@@ -1,58 +1,37 @@
 # Cognizant DeepSkilling
 
-This repository contains the solutions to the tasks that are to be completed by the applicant(in this case that will be @anirudh645 (me))
 
 ## Folder Structure
 
 ```
 Cognizant DeepSkilling/
-├── Week_1_Algorithms_and_Data_Structures/
-│   ├── 1_Exercise_2_E_Commerce_Platform_Search_Function/
-│   │   ├── Code/
-│   │   │   ├── Product.java
-│   │   │   └── Test.java
-│   │   └── Output/
-│   │       ├── 1_Exercise_E_Commerce_Platform_Output_case_1.png
-│   │       └── 1_Exercise_E_Commerce_Platform_Output_case_2.png
-│   └── 2_Exercise_7_Financial_Forecasting/
-│       ├── Code/
-│       │   └── FinancialForecasting.java
-│       └── Output/
-│           └── 2_Exercise_7_Financial_Forecasting_Output.png
-├── Week_1_Design_Patterns_and_Principles/
-│   ├── 1_Exercise_1_Singleton_Pattern_Example/
-│   │   ├── Code/
-│   │   │   ├── Logger.java
-│   │   │   └── Test.java
-│   │   └── Output/
-│   │       └── Singelton_Pattern_Example_Output.png
-│   └── 2_Exercise_2_Factory_Method_Pattern_Example/
-│       ├── Code/
-│       │   ├── Document.java
-│       │   ├── DocumentFactory.java
-│       │   ├── ExcelDocument.java
-│       │   ├── ExcelDocumentFactory.java
-│       │   ├── FactoryMethodTest.java
-│       │   ├── PdfDocument.java
-│       │   ├── PdfDocumentFactory.java
-│       │   ├── WordDocument.java
-│       │   ├── WordDocumentFactory.java
-│       └── Output/
-│           └── FactoryMethod_Pattern_Example_output.png
+├── Week_1/
+│   └── ...
+└──Week_2/
+    ├── Week_2_JUnit/
+    │   ├── Ex_1_1_Setting_Up_Junit/
+    │   │   ├── Code/Junit_Demo/
+    │   │   └── Output/
+    │   ├── Ex_2_3_Assertions_in_Junit/
+    │   │   ├── Code/JUnit_Assertions/
+    │   │   └── Output/
+    │   └── Ex_3_4_AAA_Patterns/
+    │       ├── Code/AAA_Pattern_Demo/
+    │       └── Output/
+    ├── Week_2_Mockito/
+    │   ├── Ex_1_Mocking_and_Stubbing/
+    │   │   ├── Code/Mockito_Stubbing_and_Assertions/
+    │   │   └──Output/
+    │   └── Ex_2_Verifying_interactions/
+    │   │   ├── Code/Verifying_interactions/
+    │   │   └──Output/
+    ├── Week_2_PLSQL_Exercises/
+    │   ├── 1_Exercise_1_Control_Structures/
+    │   ├── 2_Exercise_3_Stored_Procedures/
+    │   └── DataBase_Schema.txt
+    ├── Week_2_SLF4J/
+    │   ├── Code/Slf4j_Demo/
+    │   └── Output/
+
 ```
 
-## How to Run
-
-Navigate to the appropriate `Code` directory and use the following commands:
-
-```sh
-javac FileName.java
-java FileName
-```
-
-Replace `FileName` with the main class you want to run (e.g., `FinancialForecasting`, `Test`, or `FactoryMethodTest`).
-
-## Features
-
-- Organized by week and exercise.
-- Output images for reference.

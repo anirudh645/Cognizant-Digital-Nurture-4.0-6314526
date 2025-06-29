@@ -1,0 +1,61 @@
+/*This is how various tables inside the database looked like after completing the mandatory exercises*/
+SQL> select * from Accounts;
+
+ ACCOUNTID CUSTOMERID ACCOUNTTYPE             BALANCE LASTMODIF
+---------- ---------- -------------------- ---------- ---------
+         1          1 Savings                     910 28-JUN-25
+         2          2 Checking                   1600 28-JUN-25
+         3          3 Savings                    3232 28-JUN-25
+         4          4 Current                    1800 28-JUN-25
+         5          5 Savings                    5454 28-JUN-25
+         6          6 Checking                   1200 28-JUN-25
+
+6 rows selected.
+
+SQL> select * from Customers;
+
+CUSTOMERID NAME                           DOB          BALANCE LASTMODIF ISVIP
+---------- ------------------------------ --------- ---------- --------- ------
+         1 John Doe                       15-MAY-85       1000 25-JUN-25 FALSE
+         2 Jane Smith                     20-JUL-90       1500 25-JUN-25 FALSE
+         3 Alice Johnson                  01-JAN-60       2000 25-JUN-25 FALSE
+         4 Bob Williams                   30-SEP-88       1200 25-JUN-25 FALSE
+         5 Charlie Brown                  15-MAY-64     125000 25-JUN-25 TRUE
+         6 Diana Evans                    15-APR-59        900 25-JUN-25 FALSE
+
+6 rows selected.
+
+SQL> select * from Loans;
+
+    LOANID CUSTOMERID LOANAMOUNT INTERESTRATE STARTDATE ENDDATE
+---------- ---------- ---------- ------------ --------- ---------
+         1          1       5000            5 26-JUN-25 08-JUL-25
+         2          2       8000          5.5 26-JUN-25 23-JUL-25
+         3          3      12000         5.94 26-JUN-25 28-JUN-26
+         4          5       7000        4.455 26-JUN-25 26-JUN-30
+         5          6      15000       5.6925 26-JUN-25 28-JUN-27
+         6          4       9000         6.25 26-JUN-25 28-JUN-28
+
+6 rows selected.
+
+SQL> select * from transactions;
+
+TRANSACTIONID  ACCOUNTID TRANSACTI     AMOUNT TRANSACTIONTYPE
+------------- ---------- --------- ---------- --------------------
+            1          1 25-JUN-25        200 Deposit
+            2          2 25-JUN-25        300 Withdrawal
+            3          1 28-JUN-25       -100 Transfer Out
+            4          2 28-JUN-25        100 Transfer In
+
+SQL> select * from Employees;
+
+EMPLOYEEID NAME            POSITION       SALARY DEPARTMENT HIREDATE
+---------- --------------- ---------- ---------- ---------- ---------
+         1 Alice Johnson   Manager         70000 HR         15-JUN-15
+         2 Bob Brown       Developer       67200 IT         20-MAR-17
+         3 Cathy Smith     Analyst         55000 Finance    10-AUG-18
+         4 David Lee       Team Lead       89600 IT         01-NOV-16
+         5 Emily White     HR Exec         50000 HR         15-MAY-19
+         6 Frank Green     Support         45000 Support    23-JAN-20
+
+6 rows selected.
