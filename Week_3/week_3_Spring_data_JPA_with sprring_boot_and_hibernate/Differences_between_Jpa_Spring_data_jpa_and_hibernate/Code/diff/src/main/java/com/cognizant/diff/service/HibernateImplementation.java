@@ -12,7 +12,6 @@ public class HibernateImplementation {
     SessionFactory sessionFactory = null;
     Transaction transaction = null;
     Session session = null;
-    String empid = null;
     public void HibernateImplementationsave(Employee employee) {
         try {
             config = new Configuration().configure("hibernate.cfg.xml");
@@ -20,7 +19,7 @@ public class HibernateImplementation {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
             System.out.println("\n Adding Employee using Hibernate: " + employee.toString());
-            empid = (String)session.save(employee);
+            session.save(employee);
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();

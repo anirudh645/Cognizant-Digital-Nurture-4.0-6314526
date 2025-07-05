@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 @Entity
 public class Employee {
     @Id
-    public String id;
+    private String id;
     private String name;
     private String department;
     private double salary;
