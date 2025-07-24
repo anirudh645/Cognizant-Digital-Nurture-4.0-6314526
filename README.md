@@ -17,6 +17,8 @@ Week_6_React/
 ├── 3_React_HOL/
 ├── 4_React_HOL/
 ├── 5_React_HOL/
-└── 6_React_HOL/
+├── 6_React_HOL/
+├── 7_React_HOL/
+└── 8_React_HOL/
 ```
 
