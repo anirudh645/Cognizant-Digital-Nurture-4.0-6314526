@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.app-header {
+  padding: 20px;
+  color: #333;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.app-header h1 {
+  margin: 0 0 10px 0;
+}
+
+.app-header p {
+  margin: 0;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Common Card Styles */
+.book-details, .blog-details, .course-details {
+  text-align: left;
+}
+
+.book-card, .blog-card, .course-card {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.book-card h3, .blog-card h3, .course-card h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.book-card p, .blog-card p, .course-card p {
+  margin: 8px 0;
+}
+
+/* Button and Select Styles */
+button, select {
+  padding: 8px 12px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+button:hover, select:hover {
+  background-color: #f0f0f0;
+}
