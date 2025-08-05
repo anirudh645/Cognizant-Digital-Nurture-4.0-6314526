@@ -1,0 +1,99 @@
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git branch GitNewBranch
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git branch -a
+  GitNewBranch
+* master
+  remotes/origin/main
+  remotes/origin/master
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git switch GitNewBranch
+Switched to branch 'GitNewBranch'
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitNewBranch)
+$ echo "This is a new file" >> demofile.txt
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitNewBranch)
+$ echo demofile.txt
+demofile.txt
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitNewBranch)
+$ cat demofile.txt
+This is a new file
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitNewBranch)
+$ git add demofile.txt
+warning: in the working copy of 'demofile.txt', LF will be replaced by CRLF the next time Git touches it
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitNewBranch)
+$ git commit -m "Adding demofile.txt"
+[GitNewBranch 9f9aee3] Adding demofile.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demofile.txt
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitNewBranch)
+$ git status
+On branch GitNewBranch
+nothing to commit, working tree clean
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitNewBranch)
+$ git switch master
+Switched to branch 'master'
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git diff GitNewBranch
+diff --git a/demofile.txt b/demofile.txt
+deleted file mode 100644
+index 6dfa057..0000000
+--- a/demofile.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-This is a new file
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git config --global diff.tool p4merge
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git config --global difftool.p4merge.path "D:\Softwares\Perforce\p4merge.exe"
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git difftool GitNewBranch
+
+Viewing (1/1): 'demofile.txt'
+Launch 'p4merge' [Y/n]? Y
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git merge GitNewBranch
+Updating 2042377..9f9aee3
+Fast-forward
+ demofile.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demofile.txt
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git log --oneline --graph --decorate
+* 9f9aee3 (HEAD -> master, GitNewBranch) Adding demofile.txt
+* 2042377 (origin/master) Ignore log files
+* e24885f Adding welcome.txt to the repo
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git branch -d GitNewBranch
+Deleted branch GitNewBranch (was 9f9aee3).
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 334 bytes | 334.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://gitlab.com/anirudh645-group/GitDemo.git
+   2042377..9f9aee3  master -> master
