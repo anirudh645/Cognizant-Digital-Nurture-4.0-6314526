@@ -1,0 +1,90 @@
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git init
+Initialized empty Git repository in D:/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo/.git/
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ ls -al
+total 0
+drwxr-xr-x 1 USER 197609 0 Aug  5 10:28 ./
+drwxr-xr-x 1 USER 197609 0 Aug  5 10:28 ../
+drwxr-xr-x 1 USER 197609 0 Aug  5 10:28 .git/
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ echo "Welcome to the version control" >> welcome.txt
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ ls -al
+total 1
+drwxr-xr-x 1 USER 197609  0 Aug  5 10:29 ./
+drwxr-xr-x 1 USER 197609  0 Aug  5 10:28 ../
+drwxr-xr-x 1 USER 197609  0 Aug  5 10:28 .git/
+-rw-r--r-- 1 USER 197609 31 Aug  5 10:29 welcome.txt
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ cat welcome.txt
+Welcome to the version control
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        welcome.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git add welcome.txt
+warning: in the working copy of 'welcome.txt', LF will be replaced by CRLF the next time Git touches it
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git commit
+[master (root-commit) e24885f] Adding welcome.txt to the repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 welcome.txt
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git remote add origin https://gitlab.com/anirudh645-group/GitDemo.git
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git remote -v
+origin  https://gitlab.com/anirudh645-group/GitDemo.git (fetch)
+origin  https://gitlab.com/anirudh645-group/GitDemo.git (push)
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git commit
+On branch master
+nothing to commit, working tree clean
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git push origin master
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 259 bytes | 259.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: To create a merge request for master, visit:
+remote:   https://gitlab.com/anirudh645-group/GitDemo/-/merge_requests/new?merge_request%5Bsource_branch%5D=master
+remote:
+To https://gitlab.com/anirudh645-group/GitDemo.git
+ * [new branch]      master -> master
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Cognizant DeepSkilling/Week_8_GIT/1_GIT_HOL/GitDemo (master)
+$ git pull origin master
+From https://gitlab.com/anirudh645-group/GitDemo
+ * branch            master     -> FETCH_HEAD
+Already up to date.
