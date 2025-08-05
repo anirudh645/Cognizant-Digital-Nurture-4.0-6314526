@@ -1,0 +1,150 @@
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git checkout -b GitWork
+Switched to a new branch 'GitWork'
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitWork)
+$ echo "<message>Hello from GitWork branch</message>" >>hello.xml
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitWork)
+$ git add hello.xml
+warning: in the working copy of 'hello.xml', LF will be replaced by CRLF the next time Git touches it
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitWork)
+$ git commit
+[GitWork 049cfee] Adding hello.xml
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitWork)
+$ git status
+On branch GitWork
+nothing to commit, working tree clean
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (GitWork)
+$ git switch master
+Switched to branch 'master'
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ echo "<message>Updated from master</message>" >> hello.xml
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git add hello.xml
+warning: in the working copy of 'hello.xml', LF will be replaced by CRLF the next time Git touches it
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git add hello.xml
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git commit
+[master 6a0ad7e] Adding hello.xml into master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git log --oneline --graph --decorate
+| * 049cfee (GitWork) Adding hello.xml
+* | 6a0ad7e Adding hello.xml into master
+|/
+* 9f9aee3 Adding demofile.txt
+* 2042377 Ignore log files
+* e24885f Adding welcome.txt to the repo
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git merge GitWork
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ cat hello.xml
+<<<<<<< HEAD
+<message>Updated from master</message>
+=======
+<message>Hello from GitWork branch</message>
+>>>>>>> Gitwork
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+Merging:
+hello.xml
+
+Normal merge conflict for 'hello.xml':
+  {local}: created file
+  {remote}: created file
+Hit return to start merge resolution tool (p4merge):
+error: invalid path './hello_BASE_2007.xml'
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ cat hello.xml
+<message>Hello from GitWork branch</message>
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   hello.xml
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master|MERGING)
+$ echo "*.orig" >> .gitignore
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master|MERGING)
+$ echo "*.swap" >> .gitignore
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master|MERGING)
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   hello.xml
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git add .gitignore
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git commit -m "Ignore merge tool backup and swap files"
+[master 5b7a88a] Ignore merge tool backup and swap files
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git push origin master
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (10/10), 955 bytes | 955.00 KiB/s, done.
+Total 10 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://gitlab.com/anirudh645-group/GitDemo.git
+   9f9aee3..5b7a88a  master -> master
+
+USER@DESKTOP-T7RQUNS MINGW64 /d/Gitlab/GitDemo (master)
+$ git log --oneline --graph --decorate
+*   5b7a88a (HEAD -> master, origin/master) Ignore merge tool backup and swap files
+|\
+| * 049cfee (GitWork) Adding hello.xml
+* | 6a0ad7e Adding hello.xml into master
+|/
+* 9f9aee3 Adding demofile.txt
+* 2042377 Ignore log files
+* e24885f Adding welcome.txt to the repo
+
